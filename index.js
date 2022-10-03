@@ -16,13 +16,15 @@ function searchDefinition() {
     let list=document.getElementById('list');
     let uiString="";
     let definitions="";
-    if(inputVal.value==undefined||inputVal.value.length==0)
+    let word=inputVal.value.toLowerCase();
+    word=word.trim()
+    if(word==undefined||word.length==0)
     {
         alert('please enter the word to search');
     }
     else
     {
-        fetchData(inputVal.value).then((data)=>{
+        fetchData(word).then((data)=>{
             data.forEach(element => {
                 let meanings=element.meanings;
                 meanings.forEach(elem=>{
