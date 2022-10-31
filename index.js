@@ -16,6 +16,11 @@ async function fetchData(word)
 }
 
 async function displayDefinitons() {
+    let main=document.getElementById('main');
+    let loading=document.getElementById('loading');
+
+    loading.className='d-flex my-5 justify-content-center align-items-center';
+    main.className='d-none';
 
     let inputVal=document.getElementById('inputVal');
     let list=document.getElementById('list');
@@ -32,10 +37,16 @@ async function displayDefinitons() {
         {
             fetchData(word).then((data)=>{
                 if (data.title=='No Definitions Found') {
+                    loading.className='d-none my-5 justify-content-center';
+                    main.className='container my-2';
+
+                    // loading.style.display='none';
                     uiString=`<li class="list-group-item">${data.message}</li>`;
                     inputVal.value="";
                     list.innerHTML=uiString;
                 } else {
+                    loading.className='d-none my-5 justify-content-center';
+                    main.className='container my-2 d-block';
                     console.log('after',data);
                     data.forEach(element => {
                         let meanings=element.meanings;
