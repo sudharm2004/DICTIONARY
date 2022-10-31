@@ -16,15 +16,20 @@
           <a class="navbar-brand">Dictionary</a>
         </div>
       </nav>
-    <div class="container my-2">
+      <div id="loading" class="d-none">
+        <img src="loading.gif" alt="" srcset="">
+      </div>
+
+      <div class="container my-2" id="main">
         <h1>Sudharm Dictionary</h1>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Enter the word to search</span>
-            <input type="text" class="form-control" placeholder="word" aria-label="word" aria-describedby="basic-addon1" id="inputVal">
-          </div>
-          <button type="button" class="btn btn-primary my-3" id="searchBtn">Search</button>
-          <ul class="list-group" id="list">
-          </ul>
+          <span class="input-group-text" id="basic-addon1">Enter the word to search</span>
+          <input type="text" class="form-control" placeholder="word" aria-label="word" aria-describedby="basic-addon1" id="inputVal">
+        </div>
+        <button type="button" class="btn btn-primary my-3" id="searchBtn">Search</button>
+        <ul class="list-group" id="list">
+        </ul>
+        
     </div>
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
